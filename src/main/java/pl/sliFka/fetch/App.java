@@ -54,6 +54,7 @@ public class App
 
 
        //alien.getLaps(4).set(laptop);
+        //jestem zajebisty
 
 
 
