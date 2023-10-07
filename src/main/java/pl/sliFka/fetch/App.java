@@ -37,15 +37,22 @@ public class App
        laptop5.setLid(105);
        laptop5.setBrand("Mac");
        laptop5.setPrice(1234);
+
        Laptop laptop6 = new Laptop();
        laptop6.setLid(106);
        laptop6.setBrand("Samsung");
        laptop6.setPrice(4332);
 
+        Laptop laptop7 = new Laptop();
+        laptop7.setLid(107);
+        laptop7.setBrand("Asus");
+        laptop7.setPrice(4332);
 
-       List<Laptop> laptopList = new ArrayList<>(List.of(laptop,laptop2, laptop3, laptop4, laptop5, laptop6));
 
-        var laptopList2 = new ArrayList<>(List.of(laptop,laptop2, laptop3, laptop4, laptop5, laptop6));
+
+       List<Laptop> laptopList = new ArrayList<>(List.of(laptop,laptop2, laptop3, laptop4, laptop5, laptop6, laptop7));
+
+       // var laptopList2 = new ArrayList<>(List.of(laptop,laptop2, laptop3, laptop4, laptop5, laptop6));
 
         Alien alienObject = new Alien();
 
@@ -81,6 +88,7 @@ public class App
         session.save(laptop4);
         session.save(laptop5);
         session.save(laptop6);
+        session.save(laptop7);
 
 
 
