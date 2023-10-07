@@ -7,7 +7,8 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class App
@@ -16,44 +17,52 @@ public class App
     {
 
         Laptop laptop = new Laptop();
-        laptop.setLid(102);
+        laptop.setLid(101);
         laptop.setBrand("Acer");
         laptop.setPrice(300);
 
-       // Laptop laptop2 = new Laptop();
-       // laptop2.setLid(102);
-       // laptop2.setBrand("Acer");
-       // laptop2.setPrice(560);
-//
-       // Laptop laptop3 = new Laptop();
-       // laptop2.setLid(103);
-       // laptop2.setBrand("DELL");
-       // laptop2.setPrice(30020);
-//
-       // Laptop laptop4 = new Laptop();
-       // laptop2.setLid(104);
-       // laptop2.setBrand("HP");
-       // laptop2.setPrice(9000);
-//
-       // Laptop laptop5 = new Laptop();
-       // laptop2.setLid(105);
-       // laptop2.setBrand("Mac");
-       // laptop2.setPrice(1234);
-//
-       // Laptop laptop6 = new Laptop();
-       // laptop2.setLid(106);
-       // laptop2.setBrand("Samsung");
-       // laptop2.setPrice(4332);
+       Laptop laptop2 = new Laptop();
+       laptop2.setLid(102);
+       laptop2.setBrand("Acer");
+       laptop2.setPrice(560);
+       Laptop laptop3 = new Laptop();
+       laptop3.setLid(103);
+       laptop3.setBrand("DELL");
+       laptop3.setPrice(30020);
+       Laptop laptop4 = new Laptop();
+       laptop4.setLid(104);
+       laptop4.setBrand("HP");
+       laptop4.setPrice(9000);
+       Laptop laptop5 = new Laptop();
+       laptop5.setLid(105);
+       laptop5.setBrand("Mac");
+       laptop5.setPrice(1234);
+       Laptop laptop6 = new Laptop();
+       laptop6.setLid(106);
+       laptop6.setBrand("Samsung");
+       laptop6.setPrice(4332);
 
 
+       List<Laptop> laptopList = new ArrayList<>(List.of(laptop,laptop2, laptop3, laptop4, laptop5, laptop6));
 
-        Alien alien = new Alien();
-       alien.setAid(1);
-       alien.setAname("Romano");
-       alien.getLaps().add(laptop);
+        var laptopList2 = new ArrayList<>(List.of(laptop,laptop2, laptop3, laptop4, laptop5, laptop6));
+
+        Alien alienObject = new Alien();
 
 
-       //alien.getLaps(4).set(laptop);
+       alienObject.setAid(1);
+       alienObject.setAname("Romano");
+       /*alienObject.getLaps().add(laptop);
+        alienObject.getLaps().add(laptop2);
+        alienObject.getLaps().add(laptop3);
+        alienObject.getLaps().add(laptop4);
+        alienObject.getLaps().add(laptop5);
+        alienObject.getLaps().add(laptop6);*/
+        alienObject.setLaps(laptopList);
+
+        ///alienObject.getLaps().forEach( l -> l.setAlien(alienObject));
+
+       //alienObject.getLaps(4).set(laptop);
         //jestem zajebisty
 
 
@@ -67,8 +76,15 @@ public class App
         session.beginTransaction();
 
         session.save(laptop);
+        session.save(laptop2);
+        session.save(laptop3);
+        session.save(laptop4);
+        session.save(laptop5);
+        session.save(laptop6);
 
-        session.save(alien);
+
+
+        session.save(alienObject);
 
 
         session.getTransaction().commit();

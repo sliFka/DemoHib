@@ -38,6 +38,7 @@ public class Alien {
 
     public void setLaps(Collection<Laptop> laps) {
         this.laps = laps;
+        this.laps.forEach( l -> l.setAlien(this));
     }
 
 
